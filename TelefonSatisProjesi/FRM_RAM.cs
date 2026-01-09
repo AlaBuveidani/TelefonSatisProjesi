@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace TelefonSatisProjesi
+{
+    public partial class FRM_RAM : Form
+    {
+        // var for sqlcon
+        SqlConnection con = new SqlConnection();
+        SqlCommand cmd = new SqlCommand();
+
+        public FRM_RAM()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (TXT_RAM.Text != "")
+            {
+                con.ConnectionString = (@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Ala\Desktop\CsharpTutorials\TelefonSatisProjesi\TelefonSatisProjesi\Database3.mdf;Integrated Security=True");
+                con.Open();
+                cmd.Connection = con;
+                cmd.CommandText = "INSERT INTO TBRAM (RAM) VALUES (@RAM)";
+                cmd.Parameters.AddWithValue("@RAM", TXT_RAM.Text);
+                cmd.ExecuteNonQuery();
+                con.Close();
+                Form frm_add = new FRM_EKLENDI();
+                frm_add.Show();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Önce model ismi yazın");
+                con.Close();
+            }
+        }
+
+        private void bunifuImageButton2_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+    }
+}
