@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Database3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="Database3ModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Database3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TBBELLEK">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BELLEK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBKAT">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBMARKA">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBMODEL">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBMUSTERI">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADISOYADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUMARA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KULADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DOGUM" Type="DateTime" Precision="0" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KIMLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBRAM">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBSALISAN">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ADISOYADI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NUMARA" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="KULADI" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="SIFRE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="KIMLIK" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DOGUM" Type="DateTime" Precision="0" />
+          <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TBTELEFON">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BELLEK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ISLEMCI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PRICE" Type="Double" />
+          <Property Name="GARANTI" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="STOK" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="RENK" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RESIM" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="KAT" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARKA" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MODEL" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="RAM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MARKA_ID" Type="Int32" Nullable="false" />
+          <Property Name="KAT_ID" Type="Int32" Nullable="false" />
+          <Property Name="BELLEK_ID" Type="Int32" Nullable="false" />
+          <Property Name="MODEL_ID" Type="Int32" Nullable="false" />
+          <Property Name="TBMARKA_ID" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="Database3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TBBELLEK" EntityType="Self.TBBELLEK" />
+          <EntitySet Name="TBKAT" EntityType="Self.TBKAT" />
+          <EntitySet Name="TBMARKA" EntityType="Self.TBMARKA" />
+          <EntitySet Name="TBMODEL" EntityType="Self.TBMODEL" />
+          <EntitySet Name="TBMUSTERI" EntityType="Self.TBMUSTERI" />
+          <EntitySet Name="TBRAM" EntityType="Self.TBRAM" />
+          <EntitySet Name="TBSALISAN" EntityType="Self.TBSALISAN" />
+          <EntitySet Name="TBTELEFON" EntityType="Self.TBTELEFON" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Database3ModelStoreContainer" CdmEntityContainer="Database3Entities">
+          </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
